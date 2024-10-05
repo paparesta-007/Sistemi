@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1727864819 source:c:\users\lenovo\desktop\4b inf\sistemi\puntatori\espuntatori\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
+1728050867 source:c:\users\ghism\onedrive\desktop\sistemi\sistemi\puntatori\espuntatori\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1727947638 source:c:\users\lenovo\desktop\4b inf\sistemi\bitmap\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+
