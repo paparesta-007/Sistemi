@@ -4,7 +4,7 @@
 #define MAXFIBONACCI 10
 #define MAXSTR 15
 
-void caricaVettore(int *vet, int lunghezza);
+void caricaVettore(int *vet, int lunghezza); //Metodi
 void stampaVettore(int *vet, int lunghezza);
 void invertiVettore(int *vet,int lunghezza);
 void ordinaVettore(int *vet,int lunghezza);
