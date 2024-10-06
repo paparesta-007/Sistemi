@@ -4,7 +4,7 @@
 #define MAXFIBONACCI 10
 #define MAXSTR 15
 
-void caricaVettore(int *vet, int lunghezza); //Metodi
+void caricaVettore(int *vet, int lunghezza);
 void stampaVettore(int *vet, int lunghezza);
 void invertiVettore(int *vet,int lunghezza);
 void ordinaVettore(int *vet,int lunghezza);
@@ -13,6 +13,7 @@ void invertiStringa(char *str);
 void convertiMaiuscoloMinuscolo(char *str);
 void concatenaStringhe(char *str, char *str2, char *str3);
 void cifraturaCesare(char *str);
+void visualizzaRicorrenze(char *str);
 char menu();
 
 int main() {
@@ -79,6 +80,11 @@ int main() {
             case 'K':
                 cifraturaCesare(str);
                 printf("Stringa cifrata: %s",str);
+                break;
+            case 'l':
+            case 'L':
+                //printf("prova");
+                visualizzaRicorrenze(str);
                 break;
             case 'q':
             case 'Q':
@@ -245,6 +251,28 @@ void cifraturaCesare(char *str){
     str='\0';
 
 }
+void visualizzaRicorrenze(char *str){
+    char *p=str;
+
+    int alfabeto[26]={};// lungo 26 caratteri, ogni volta che vedo un carattere lo metto nella posizione
+    int *p2=alfabeto;
+
+   while (*p != '\0') {
+        if (*p >= 'a' && *p <= 'z') {
+            alfabeto[*p - 'a']++;
+        }
+        p++;
+    }
+
+
+    while (p2 != alfabeto + 26) {
+        if (*p2 != 0) {
+           char c = 'a' + (p2 - alfabeto);
+            printf("%c: %i\n", c, *p2);
+        }
+        p2++;
+    }
+}
 char menu() {
     char s;
     system("cls");
@@ -261,6 +289,7 @@ char menu() {
     printf("i. Converti maiuscolo in minuscolo (e viceversa)\n");
     printf("j. Concatena 2 stringhe\n");
     printf("k. Cifratura Cesare (4 lettere)\n");
+    printf("l. Visualizzare le ricorrenze\n");
     printf("Q. Uscita\n");
     printf("Scelta: ");
     s = getchar();
