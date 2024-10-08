@@ -14,13 +14,16 @@ void caricaUtenti(Persona *utenti, int *nUtenti);
 void stampaUtenti(Persona *utenti, int nUtenti);
 void ordinamento(Persona *utenti,int nUtenti);
 void modificaUtente(Persona *utenti,int nUtenti);
+void cercaUtenteDebitoAlto(Persona *utenti,int nUtenti);
+void stampaUtentiEtaInput(Persona *utenti, int nUtenti,int min, int max);
 char menu();
 
 int main() {
     char scelta;
     Persona utenti[5]; // Array to hold up to 5 users
     int nUtenti = 0;   // Current number of users
-
+    int etaMin;
+    int etaMax;
     do {
         scelta = menu();
 
@@ -40,6 +43,20 @@ int main() {
             case 'd':
             case 'D':
                 modificaUtente(utenti,nUtenti);
+                break;
+            case 'e':
+            case 'E':
+                cercaUtenteDebitoAlto(utenti,nUtenti);
+                break;
+            case 'f':
+            case 'F':
+                printf("Inserisci eta' minima: ");
+                scanf("%d",&etaMin);
+                printf("Inserisci eta' massima: ");
+                scanf("%d",&etaMax);
+
+                stampaUtentiEtaInput(utenti,nUtenti,etaMin,etaMax);
+                getchar();
                 break;
             case 'q':
             case 'Q':
@@ -64,6 +81,9 @@ char menu() {
     printf("a. Carica vettore\n");
     printf("b. Stampa tutti\n");
     printf("c. Ordina in base al debito\n");
+    printf("d. Modifica un utente\n");
+    printf("e. Cerca utente con il debito piu' alto\n");
+    printf("...\n");
     printf("q. Uscita\n");
     printf("Scelta: ");
     s = getchar();
@@ -158,4 +178,26 @@ void modificaUtente(Persona *utenti, int nUtenti) {
 
     printf("Utente non trovato.\n");
 }
-
+void cercaUtenteDebitoAlto(Persona *utenti,int nUtenti){
+    Persona *current=utenti;
+    Persona *personaDebitoAlto=current;
+    while(current<=utenti+nUtenti){
+        if(personaDebitoAlto->debito<current->debito)
+            personaDebitoAlto->debito=current->debito;
+        current++;
+    }
+    printf("La persona con il debito piu' alto e' %s %s con un debito di %d",personaDebitoAlto->nome,
+           personaDebitoAlto->cognome,personaDebitoAlto->debito);
+}
+void stampaUtentiEtaInput(Persona *utenti, int nUtenti,int min, int max){
+    Persona *current=utenti;
+    while(current<=utenti+nUtenti){
+        if((current->eta>=min)&&(current->eta<=max)){
+            printf("Nome: %s\n", current->nome);
+            printf("Cognome: %s\n", current->cognome);
+            printf("Eta: %d\n", current->eta);
+            printf("Debito: %d\n\n", current->debito);
+        }
+        current++;
+    }
+}
