@@ -1,38 +1,43 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <malloc.h>
+#define WIDTH 50
+#define HEIGHT 50
 
-//caricare FOTO .bmp
-
-//typedef unsigned char byte; //prendi il tipo unsigned char e chiamalo byte (unsigned char senza niente)
-
-#define WIDTH 5000
-#define HEIGHT 5000
-
-struct pixel{
+typedef struct {
     int R;
     int G;
     int B;
-};
+}t_pixel;
 
-//void resize(struct pixel* img);
-
+void colora(t_pixel img[][WIDTH]);
 int main()
 {
-    int c;
-    int s_p; //puntatore stack
-    const char* h_p; //puntatore heap
-    s_p = &c;
-    h_p = (int*) malloc(sizeof(int)*300 /*in byte*/); //sintassi più pulita di tutte
-    //malloc(5*1024*1024); //byte -> kilobyte -> megabyte
+     /// alloco t_pixel in heap
+    t_pixel* p_mem;
 
-    printf("%p, %p \n", s_p, h_p);
-    h_p++;
-    printf("%p, %p \n", s_p, h_p);
+    p_mem=(t_pixel*) malloc(WIDTH*HEIGHT*sizeof(t_pixel)); //byte -> kilobyte -> megabyte
+    printf("%p",*p_mem);
+    getchar();
 
-    /*
-    struct pixel immagine[WIDTH][HEIGHT];
-    resize(immagine);
-    */
+    colora(p_mem);
+    p_mem+=WIDTH+1;
+    printf("%p\n",p_mem);
+    printf("%d\n",p_mem->B);
+    printf("%d\n",p_mem->G);
+
+
+
+    getchar();
     return 0;
+}
+void colora(t_pixel img[][WIDTH]){
+    int i,j;
+    for(i=0;i<HEIGHT;i++){
+         for(j=0;j<WIDTH;j++){
+            img[i][j].B=255-i;
+            img[i][j].G=128-i;
+         }
+
+    }
 }
