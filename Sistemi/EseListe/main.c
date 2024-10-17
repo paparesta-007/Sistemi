@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <malloc.h>
 
-typedef struct{
+typedef struct
+{
     int x;
     int *p;
 } nodo;
@@ -30,18 +31,24 @@ int main()
     printf("Hello world!\n");
     return 0;
 }
-nodo* NuovoNodo(nodo* next){
+nodo* NuovoNodo(nodo* next)
+{
     nodo *n_p = (nodo*)malloc(sizeof(nodo));
     n_p->p = next;
     return n_p;
 }
-void EliminaNodo(nodo* n_p){
+void EliminaNodo(nodo* n_p)
+{
     printf("Ho cancellato nodo %d\n",n_p->x);
     free(n_p);
 }
-int contaNodi(nodo* head){
+int contaNodi(nodo* head)
+{
     int cont=0;
-    while(head!=NULL){
+    if(head->p==NULL)
+        return 0;
+    while(head!=NULL)
+    {
         cont++;
         head=head->p;
     }
