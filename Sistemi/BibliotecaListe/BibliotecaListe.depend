@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1730288578 source:c:\users\t.paparesta.3231\desktop\sistemi\sistemi\bibliotecaliste\main.c
+	<stdio.h>
+	<stdlib.h>
+	"libreria.h"
+
+1730290743 c:\users\t.paparesta.3231\desktop\sistemi\sistemi\bibliotecaliste\libreria.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1729679225 source:c:\users\t.paparesta.3231\desktop\sistemi\sistemi\eseliste\main.c
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+
