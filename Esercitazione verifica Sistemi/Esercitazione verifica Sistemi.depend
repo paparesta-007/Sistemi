@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1731429625 source:c:\users\ghism\onedrive\desktop\esercitazione verifica sistemi\main.c
+	<stdio.h>
+	"libreria.h"
+
+1731429890 c:\users\ghism\onedrive\desktop\esercitazione verifica sistemi\libreria.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

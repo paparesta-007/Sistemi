@@ -30,6 +30,10 @@ int main() {
                 head=swap(head);
 
                 break;
+            case 'o':
+            case 'O':
+                head=ordina(head);
+                break;
             case 'q':
             case 'Q':
                 printf("Uscita...\n");
