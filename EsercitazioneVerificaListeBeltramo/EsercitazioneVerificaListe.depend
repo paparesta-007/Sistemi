@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1731175223 source:c:\users\user\desktop\chiavetta\4 anno\sistemi e reti\esercitazioneverificaliste\main.c
+	"libBanca.h"
+
+1731175324 c:\users\user\desktop\chiavetta\4 anno\sistemi e reti\esercitazioneverificaliste\libbanca.h
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<string.h>
+
+1731424328 source:c:\users\user\desktop\chiavetta\4 anno\sistemi e reti\liste\esercitazioneverificaliste\main.c
+	"libBanca.h"
+
+1731424436 c:\users\user\desktop\chiavetta\4 anno\sistemi e reti\liste\esercitazioneverificaliste\libbanca.h
+	<stdio.h>
+	<stdlib.h>
+	<malloc.h>
+	<string.h>
+
